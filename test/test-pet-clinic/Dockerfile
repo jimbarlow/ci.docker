@@ -1,6 +1,6 @@
 
 #ARG IMAGE=ibmcom/websphere-liberty:full-java8-openj9-ubi
-FROM ibmcom/websphere-liberty:20.0.0.6-full-java8-openj9-ubi as staging
+FROM ibmcom/websphere-liberty:20.0.0.6-full-java8-openj9-ubi # as staging
 # changed to above because: error: can't build "${IMAGE}": invalid reference format
 # FROM ${IMAGE} as staging
 

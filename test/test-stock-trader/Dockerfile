@@ -15,8 +15,11 @@
 FROM ibmcom/websphere-liberty:full-java8-openj9-ubi
 # FROM open-liberty:microProfile2
 
-COPY --chown=1001:0 config /config/
-COPY --chown=1001:0 trader-1.0-SNAPSHOT.war /config/apps/TraderUI.war
+USER root
+
+COPY config /config/
+COPY trader-1.0-SNAPSHOT.war /config/apps/TraderUI.war
+RUN chown -R 1001:0 /config/ /config/apps/TraderUI.war
 
 ARG VERBOSE=false
 
